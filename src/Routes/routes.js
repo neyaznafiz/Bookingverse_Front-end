@@ -1,5 +1,5 @@
 import { Main } from "Layout";
-import { Home, HotelsInfo, List,} from "Pages";
+import { Home, HotelsInfo, HotelsList } from "Pages";
 import { createBrowserRouter } from "react-router-dom";
 
 export const routes = createBrowserRouter([
@@ -13,7 +13,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/hotels",
-        element: <List />,
+        element: <HotelsList />,
         },
         {
             path: "/hotels/:id",

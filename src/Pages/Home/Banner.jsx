@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const HotelsList = () => {
+const Banner = () => {
     return (
         <div>
-            <h1>Hotels List</h1>
+            
         </div>
     );
 };
+
+export default Banner;

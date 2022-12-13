@@ -1,4 +1,7 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bdr {
+  border: 2px solid black;
+}
