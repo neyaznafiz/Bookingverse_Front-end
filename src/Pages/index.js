@@ -1,2 +1,3 @@
 export * from "./Home/Home"
-export * from "./List/List"
+export * from "./Hotels/HotelsList"
+export * from "./Hotels/HotelsInfo"
