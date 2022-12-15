@@ -6,25 +6,29 @@ import propertyFour from "../../Assets/FeaturedProperties/Hilton Garden Inn.jpg"
 
 const FeaturedProperties = () => {
   return (
-    <div className="width my-10">
+    <div className="width mb-10">
       <h1 className="text-black text-2xl font-semibold my-3 border-b-2 border-[#febb02] pb-2 tracking-wide">
         Homes Guests Love
       </h1>
 
       <div className="flex justify-between gap-5">
         <div className="">
-          <img src={propertyOne} alt="" className="w-[700px] h-[270px]" />
+          <div className="overflow-hidden rounded-md">
+            <img
+              src={propertyOne}
+              alt=""
+              className="w-[700px] h-[270px] rounded-md hover:scale-110 transition-all duration-300"
+            />
+          </div>
 
           <div>
-            <p className="font-bold text-xl tracking-wide">
+            <p className="font-bold text-xl tracking-wide my-2">
               Aparthotel Stare Miasto
             </p>
             <p className="tracking-wide">
-              {" "}
               <span className="font-semibold">City :</span> Madrid
             </p>
             <p className="tracking-wide">
-              {" "}
               <span className="font-semibold">Price :</span> Starting from $120
             </p>
             <div className="flex ">
@@ -38,18 +42,22 @@ const FeaturedProperties = () => {
         </div>
 
         <div className="">
-          <img src={propertyTwo} alt="" className="w-[700px] h-[270px]" />
+          <div className="overflow-hidden rounded-md">
+            <img
+              src={propertyTwo}
+              alt=""
+              className="w-[700px] h-[270px] rounded-md hover:scale-110 transition-all duration-300"
+            />
+          </div>
 
           <div>
-            <p className="font-bold text-xl tracking-wide">
+            <p className="font-bold text-xl tracking-wide my-2">
               Comfort Suites Airport
             </p>
             <p className="tracking-wide">
-              {" "}
               <span className="font-semibold">City :</span> Austin
             </p>
             <p className="tracking-wide">
-              {" "}
               <span className="font-semibold">Price :</span> Starting from $140
             </p>
             <div className="flex">
@@ -62,9 +70,17 @@ const FeaturedProperties = () => {
         </div>
 
         <div className="">
-          <img src={propertyThree} alt="" className="w-[700px] h-[270px]" />
+          <div className="overflow-hidden rounded-md">
+            <img
+              src={propertyThree}
+              alt=""
+              className="w-[700px] h-[270px] rounded-md hover:scale-110 transition-all duration-300"
+            />
+          </div>
 
-          <p className="font-bold text-xl tracking-wide">Four Seasons Hotel</p>
+          <p className="font-bold text-xl tracking-wide my-2">
+            Four Seasons Hotel
+          </p>
           <p className="tracking-wide">
             <span className="font-semibold">City :</span> Lisbon
           </p>
@@ -80,9 +96,17 @@ const FeaturedProperties = () => {
         </div>
 
         <div className="">
-          <img src={propertyFour} alt="" className="w-[700px] h-[270px]" />
+          <div className="overflow-hidden rounded-md">
+            <img
+              src={propertyFour}
+              alt=""
+              className="w-[700px] h-[270px] rounded-md hover:scale-110 transition-all duration-300"
+            />
+          </div>
 
-          <p className="font-bold text-xl tracking-wide">Hilton Garden Inn</p>
+          <p className="font-bold text-xl tracking-wide my-2">
+            Hilton Garden Inn
+          </p>
           <p className="tracking-wide">
             <span className="font-semibold">City :</span> Berlin
           </p>

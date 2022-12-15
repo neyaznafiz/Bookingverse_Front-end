@@ -17,7 +17,7 @@ const PropertyList = () => {
           <img
             src={hotels}
             alt=""
-            className="w-[280px] h-36 rounded-lg object-cover"
+            className="w-[280px] h-36 rounded-lg object-cover hover:scale-110 transition-all duration-300"
           />
           <div>
             <h1 className="text-xl font-semibold tracking-wide">Hotels</h1>
@@ -29,7 +29,7 @@ const PropertyList = () => {
           <img
             src={apartments}
             alt=""
-            className="w-[280px] h-36 rounded-lg object-cover"
+            className="w-[280px] h-36 rounded-lg object-cover hover:scale-110 transition-all duration-300"
           />
           <div className="my-2">
             <h1 className="text-xl font-semibold tracking-wide">Apartments</h1>
@@ -41,7 +41,7 @@ const PropertyList = () => {
           <img
             src={resorts}
             alt=""
-            className="w-[280px] h-36 rounded-lg object-cover"
+            className="w-[280px] h-36 rounded-lg object-cover hover:scale-110 transition-all duration-300"
           />
           <div className="my-2">
             <h1 className="text-xl font-semibold tracking-wide">Resorts</h1>
@@ -53,7 +53,7 @@ const PropertyList = () => {
           <img
             src={villas}
             alt=""
-            className="w-[280px] h-36 rounded-lg object-cover"
+            className="w-[280px] h-36 rounded-lg object-cover hover:scale-110 transition-all duration-300"
           />
           <div className="my-2">
             <h1 className="text-xl font-semibold tracking-wide">Villas</h1>
@@ -65,7 +65,7 @@ const PropertyList = () => {
           <img
             src={cabins}
             alt=""
-            className="w-[280px] h-36 rounded-lg object-cover"
+            className="w-[280px] h-36 rounded-lg object-cover hover:scale-110 transition-all duration-300"
           />
           <div className="my-2">
             <h1 className="text-xl font-semibold tracking-wide">Cabins</h1>
