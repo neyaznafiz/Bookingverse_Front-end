@@ -1,17 +1,16 @@
 import React from "react";
 import { FaBed, FaCar, FaPlane, FaTaxi } from "react-icons/fa";
-import Search from "./Search";
+import HeaderBanner from "./HeaderBanner";
+import Search from "./HeaderSearch";
 
 export const Header = ({ type }) => {
   const activeClass = "border-b-2 px-1";
 
   return (
     <div className="bg-[#013986] flex justify-center text-white transition-all duration-300 relative">
-      <div
-        className={`{type !== "hotelsList" ? " width mb-[100px]" : "width"`}
-      >
-        {/* banner nav */}
-        <div className="flex gap-10 my-6">
+      <div className={`{type !== "hotelsList" ? " width mb-[100px]" : "width"`}>
+        {/* header nav section */}
+        <div className="flex gap-10 my-7">
           <div className="flex items-center gap-2">
             <FaBed />
             <span>Stays</span>
@@ -38,20 +37,11 @@ export const Header = ({ type }) => {
           </div>
         </div>
 
-        {/* title */}
+        {/* header info section */}
         {type !== "hotelsList" && (
           <>
-            <h1 className="text-4xl font-bold tracking-wide my-5">
-              A lifetime of discount? It's Genius.
-            </h1>
-            <p className="my-5">
-              Get rewarded for your travels - unlock instant saving of 10% or
-              more with a free Lamabooking account
-            </p>
-            <button className="bg-[#0071c2] px-3 py-2 shadow-lg">
-              Sign In / Register
-            </button>
-
+            {/* banner section in header */}
+            <HeaderBanner />
             {/* search section in header */}
             <div className="mt-[100px]">
               <Search />
