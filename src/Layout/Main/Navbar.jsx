@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <div className="h-[50px] bg-primary flex justify-center uppercase transition-all duration-300">
-      <div className="w-full max-w-[1500px] text-white flex justify-between items-center">
+      <div className="width text-white flex justify-between items-center">
         <div>
           <Link to="/" className="text-2xl uppercase">
             bookingverse

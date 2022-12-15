@@ -1,4 +1,4 @@
-import { Header } from "Components";
+import { Footer, Header } from "Components";
 import React from "react";
 import Featured from "./Featured";
 import PropertyList from "./PropertyList";
@@ -13,7 +13,8 @@ export const Home = () => {
         <Featured />
         <PropertyList />
         <FeaturedProperties />
-        <MailList/>
+        <MailList />
+        <Footer/>
       </div>
     </div>
   );

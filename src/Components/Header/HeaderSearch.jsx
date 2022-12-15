@@ -37,7 +37,7 @@ const Search = () => {
   };
 
   return (
-    <div className="h-9 bg-white text-gray-400 flex items-center justify-between border-2 border-[#febb02] py-7 px-2 rounded-md absolute -bottom-8 w-full max-w-[1500px]">
+    <div className="h-9 bg-white text-gray-400 flex items-center justify-between border-2 border-[#febb02] py-7 px-2 rounded-md absolute -bottom-8 width">
       <div className="flex items-end gap-x-3 ">
         <FaBed className="text-3xl" />
         <input
