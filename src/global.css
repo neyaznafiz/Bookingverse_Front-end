@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-size: 18px;
+  line-height: 28px;
+  font-family: "Quicksand", sans-serif;
+}
 
 .bdr {
   border: 2px solid black;

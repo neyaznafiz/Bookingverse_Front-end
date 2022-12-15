@@ -6,7 +6,7 @@ import { routes } from "Routes/routes";
 
 const App = () => {
   return (
-    <div className="">
+    <div>
       <RouterProvider router={routes} />
     </div>
   );
