@@ -6,7 +6,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="h-[50px] bg-[#013986] flex justify-center uppercase transition-all duration-300">
+    <div className="h-[50px] bg-primary flex justify-center uppercase transition-all duration-300">
       <div className="w-full max-w-[1500px] text-white flex justify-between items-center">
         <div>
           <Link to="/" className="text-2xl uppercase">
@@ -29,10 +29,10 @@ const Navbar = () => {
             Hotels
           </Link>
 
-          <button className="bg-white text-[#013986] px-3 border-none uppercase">
+          <button className="bg-white text-primary px-3 border-none uppercase">
             Register
           </button>
-          <button className="bg-white text-[#013986] px-3 border-none uppercase">
+          <button className="bg-white text-primary px-3 border-none uppercase">
             Login
           </button>
         </div>

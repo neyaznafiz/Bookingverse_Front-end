@@ -33,7 +33,7 @@ const FeaturedProperties = () => {
             </p>
             <div className="flex ">
               {/* <span className="font-semibold">Rating : </span> */}
-              <button className="bg-[#013986] text-white border-none px-3 mr-3 font-bold">
+              <button className="bg-primary text-white border-none px-3 mr-3 font-bold">
                 8.9
               </button>
               <p className="tracking-wide">Excellent</p>
@@ -61,7 +61,7 @@ const FeaturedProperties = () => {
               <span className="font-semibold">Price :</span> Starting from $140
             </p>
             <div className="flex">
-              <button className="bg-[#013986] text-white border-none px-3 mr-3 font-bold">
+              <button className="bg-primary text-white border-none px-3 mr-3 font-bold">
                 9.3
               </button>
               <p className="tracking-wide">Exceptional</p>
@@ -88,7 +88,7 @@ const FeaturedProperties = () => {
             <span className="font-semibold">Price :</span> Starting from $99
           </p>
           <div className="flex">
-            <button className="bg-[#013986] text-white border-none px-3 mr-3 font-bold">
+            <button className="bg-primary text-white border-none px-3 mr-3 font-bold">
               8.8
             </button>
             <p className="tracking-wide">Excellent</p>
@@ -114,7 +114,7 @@ const FeaturedProperties = () => {
             <span className="font-semibold">Price :</span> Starting from $105
           </p>
           <div className="flex">
-            <button className="bg-[#013986] text-white border-none px-3 mr-3 font-bold">
+            <button className="bg-primary text-white border-none px-3 mr-3 font-bold">
               8.9
             </button>
             <p className="tracking-wide">Excellent</p>

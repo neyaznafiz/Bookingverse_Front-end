@@ -3,6 +3,7 @@ import React from "react";
 import Featured from "./Featured";
 import PropertyList from "./PropertyList";
 import FeaturedProperties from "./FeaturedProperties";
+import MailList from "./MailList";
 
 export const Home = () => {
   return (
@@ -11,7 +12,8 @@ export const Home = () => {
       <div className="mt-24 flex flex-col items-center gap-8">
         <Featured />
         <PropertyList />
-        <FeaturedProperties/>
+        <FeaturedProperties />
+        <MailList/>
       </div>
     </div>
   );

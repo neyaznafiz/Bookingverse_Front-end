@@ -86,7 +86,7 @@ const Search = () => {
                 <button
                   onClick={() => handleOption("adult", "d")}
                   disabled={options.adult <= 1}
-                  className="bg-[#0071c2] px-3 shadow-lg text-white disabled:cursor-not-allowed disabled:bg-gray-500"
+                  className="bg-primary px-3 shadow-lg text-white disabled:cursor-not-allowed disabled:bg-gray-500"
                 >
                   -
                 </button>
@@ -95,7 +95,7 @@ const Search = () => {
                 </p>
                 <button
                   onClick={() => handleOption("adult", "i")}
-                  className="bg-[#0071c2] px-3 shadow-lg text-white"
+                  className="bg-primary px-3 shadow-lg text-white"
                 >
                   +
                 </button>
@@ -109,7 +109,7 @@ const Search = () => {
                 <button
                   onClick={() => handleOption("children", "d")}
                   disabled={options.children <= 0}
-                  className="bg-[#0071c2] px-3 shadow-lg text-white disabled:cursor-not-allowed disabled:bg-gray-500"
+                  className="bg-primary px-3 shadow-lg text-white disabled:cursor-not-allowed disabled:bg-gray-500"
                 >
                   -
                 </button>
@@ -118,7 +118,7 @@ const Search = () => {
                 </p>
                 <button
                   onClick={() => handleOption("children", "i")}
-                  className="bg-[#0071c2] px-3 shadow-lg text-white"
+                  className="bg-primary px-3 shadow-lg text-white"
                 >
                   +
                 </button>
@@ -132,7 +132,7 @@ const Search = () => {
                 <button
                   onClick={() => handleOption("room", "d")}
                   disabled={options.room <= 1}
-                  className="bg-[#0071c2] px-3 shadow-lg text-white disabled:cursor-not-allowed disabled:bg-gray-500"
+                  className="bg-primary px-3 shadow-lg text-white disabled:cursor-not-allowed disabled:bg-gray-500"
                 >
                   -
                 </button>
@@ -141,7 +141,7 @@ const Search = () => {
                 </p>
                 <button
                   onClick={() => handleOption("room", "i")}
-                  className="bg-[#0071c2] px-3 shadow-lg text-white"
+                  className="bg-primary px-3 shadow-lg text-white"
                 >
                   +
                 </button>
@@ -152,7 +152,7 @@ const Search = () => {
       </div>
 
       <div className="">
-        <button className="px-3 py-2 bg-[#0071c2] text-white flex gap-x-2 rounded-md">
+        <button className="px-3 py-2 bg-primary text-white flex gap-x-2 rounded-md">
           SEARCH <TbMapSearch className="text-2xl"/>
         </button>
       </div>

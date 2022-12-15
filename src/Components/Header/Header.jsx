@@ -7,7 +7,7 @@ export const Header = ({ type }) => {
   const activeClass = "border-b-2 px-1";
 
   return (
-    <div className="bg-[#013986] flex justify-center text-white transition-all duration-300 relative">
+    <div className="bg-primary flex justify-center text-white transition-all duration-300 relative">
       <div className={`{type !== "hotelsList" ? " width mb-[100px]" : "width"`}>
         {/* header nav section */}
         <div className="flex gap-10 my-7">
