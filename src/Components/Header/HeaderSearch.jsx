@@ -63,7 +63,7 @@ const Search = () => {
             onChange={(item) => setDate([item.selection])}
             moveRangeOnFirstSelection={false}
             ranges={date}
-            className="absolute top-14"
+            className="absolute top-14 z-[999] shadow-md"
           />
         )}
       </div>
@@ -78,7 +78,7 @@ const Search = () => {
           <p className="w-[279px] text-center -mb-[3px]">{`${options.adult} Adult ∙ ${options.children} Children ∙ ${options.room} Room`}</p>
         </div>
         {openOptions && (
-          <div className="absolute top-14 lg:w-72 shadow-md space-y-3 p-4">
+          <div className="absolute top-14 lg:w-72 shadow-md space-y-3 p-4 z-[999] bg-white">
             <div className="flex justify-between">
               <p className="font-semibold">Adult</p>
 

@@ -6,7 +6,7 @@ export const Home = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className="mt-24 flex flex-col items-center gap-8">
         <Featured />
       </div>
     </div>
