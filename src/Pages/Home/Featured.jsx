@@ -8,10 +8,10 @@ import italy from "../../Assets/Featured/italy.jpg";
 
 const Featured = () => {
   return (
-    <div className="width flex justify-between gap-3 z-[1] mb-20 text-white">
+    <div className="width flex justify-between gap-3 z-[1] text-white">
       <div className="flex flex-wrap w-1/2 gap-3">
         <div className="flex gap-3">
-          <div className="w-1/2 overflow-hidden cursor-pointer relative">
+          <div className="w-1/2 overflow-hidden cursor-pointer relative rounded-lg">
             <img
               alt="gallery"
               className="block object-cover object-center w-full h-[272px] hover:scale-110 transition-all "
@@ -25,7 +25,7 @@ const Featured = () => {
             </div>
           </div>
 
-          <div className="w-1/2 overflow-hidden cursor-pointer relative">
+          <div className="w-1/2 overflow-hidden cursor-pointer relative rounded-lg">
             <img
               alt="gallery"
               className="block object-cover object-center w-full h-[272px] hover:scale-110 transition-all "
@@ -41,7 +41,7 @@ const Featured = () => {
         </div>
 
         <div className="w-full">
-          <div className="w-full h-[275px] overflow-hidden cursor-pointer relative">
+          <div className="w-full h-[275px] overflow-hidden cursor-pointer relative rounded-lg">
             <img
               alt="gallery"
               className="block object-cover object-center w-full h-full hover:scale-110 transition-all "
@@ -59,7 +59,7 @@ const Featured = () => {
 
       <div className="flex flex-wrap w-1/2 gap-3">
         <div className="w-full">
-          <div className="w-full h-[275px] overflow-hidden cursor-pointer relative">
+          <div className="w-full h-[275px] overflow-hidden cursor-pointer relative rounded-lg">
             <img
               alt="gallery"
               className="block object-cover object-center w-full h-full hover:scale-110 transition-all "
@@ -75,7 +75,7 @@ const Featured = () => {
         </div>
 
         <div className="flex gap-3">
-          <div className="w-1/2 overflow-hidden cursor-pointer relative">
+          <div className="w-1/2 overflow-hidden cursor-pointer relative rounded-lg">
             <img
               alt="gallery"
               className="block object-cover object-center w-full h-[272px]  hover:scale-110 transition-all "
@@ -89,7 +89,7 @@ const Featured = () => {
             </div>
           </div>
 
-          <div className="w-1/2 overflow-hidden cursor-pointer relative">
+          <div className="w-1/2 overflow-hidden cursor-pointer relative rounded-lg">
             <img
               alt="gallery"
               className="block object-cover object-center w-full h-[272px]  hover:scale-110 transition-all"
