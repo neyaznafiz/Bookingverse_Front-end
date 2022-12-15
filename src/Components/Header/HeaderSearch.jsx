@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { BsFillPersonFill } from "react-icons/bs";
+import {TbMapSearch} from "react-icons/tb"
 import { FaBed, FaCalendarAlt } from "react-icons/fa";
 
 const Search = () => {
@@ -36,9 +37,9 @@ const Search = () => {
   };
 
   return (
-    <div className="h-9 bg-white text-gray-400 flex items-center justify-around border-2 border-[#febb02] py-7 rounded-md absolute -bottom-8 w-full max-w-[1500px]">
-      <div className="flex items-center gap-x-3 ">
-        <FaBed />
+    <div className="h-9 bg-white text-gray-400 flex items-center justify-between border-2 border-[#febb02] py-7 px-2 rounded-md absolute -bottom-8 w-full max-w-[1500px]">
+      <div className="flex items-end gap-x-3 ">
+        <FaBed className="text-3xl" />
         <input
           type="text"
           placeholder="Where are you going?"
@@ -51,11 +52,11 @@ const Search = () => {
         onClick={() => setOpenDate(!openDate)}
         className="flex items-center gap-x-3 cursor-pointer"
       >
-        <FaCalendarAlt />
-        <span>{`${format(date[0].startDate, "MM/dd/yyyy")} To ${format(
+        <FaCalendarAlt  className="text-2xl"/>
+        <p className="-mb-[7px]">{`${format(date[0].startDate, "MM/dd/yyyy")} To ${format(
           date[0].endDate,
           "MM/dd/yyyy"
-        )}`}</span>
+        )}`}</p>
         {openDate && (
           <DateRange
             editableDateInputs={true}
@@ -71,10 +72,10 @@ const Search = () => {
       <div className="cursor-pointer">
         <div
           onClick={() => setOpenOptions(!openOptions)}
-          className="flex items-center"
+          className="flex items-end"
         >
-          <BsFillPersonFill />
-          <p className="w-[279px] text-center">{`${options.adult} Adult ∙ ${options.children} Children ∙ ${options.room} Room`}</p>
+          <BsFillPersonFill className="text-3xl" />
+          <p className="w-[279px] text-center -mb-[3px]">{`${options.adult} Adult ∙ ${options.children} Children ∙ ${options.room} Room`}</p>
         </div>
         {openOptions && (
           <div className="absolute top-14 lg:w-72 shadow-md space-y-3 p-4">
@@ -151,8 +152,8 @@ const Search = () => {
       </div>
 
       <div className="">
-        <button className="bg-[#0071c2] px-3 py-2 shadow-lg text-white">
-          Search
+        <button className="px-3 py-2 bg-[#0071c2] text-white flex gap-x-2 rounded-md">
+          SEARCH <TbMapSearch className="text-2xl"/>
         </button>
       </div>
     </div>
