@@ -2,6 +2,7 @@ import { Header } from "Components";
 import React from "react";
 import Featured from "./Featured";
 import PropertyList from "./PropertyList";
+import FeaturedProperties from "./FeaturedProperties";
 
 export const Home = () => {
   return (
@@ -9,7 +10,8 @@ export const Home = () => {
       <Header />
       <div className="mt-24 flex flex-col items-center gap-8">
         <Featured />
-        <PropertyList/>
+        <PropertyList />
+        <FeaturedProperties/>
       </div>
     </div>
   );

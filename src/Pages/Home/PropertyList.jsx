@@ -8,7 +8,7 @@ import cabins from "../../Assets/PropertyList/cabins.jpg";
 const PropertyList = () => {
   return (
     <div className="width">
-      <h1 className="text-black text-2xl font-semibold width my-3 border-b-2 border-[#febb02] pb-2">
+      <h1 className="text-black text-2xl font-semibold my-3 border-b-2 border-[#febb02] pb-2 tracking-wide">
         Browse By Property Type
       </h1>
 
