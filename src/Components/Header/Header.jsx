@@ -1,7 +1,7 @@
 import React from "react";
 import { FaBed, FaCar, FaPlane, FaTaxi } from "react-icons/fa";
 import HeaderBanner from "./HeaderBanner";
-import Search from "./HeaderSearch";
+import HeaderSearch from "./HeaderSearch";
 
 export const Header = ({ type }) => {
   const activeClass = "border-b-2 px-1";
@@ -44,7 +44,7 @@ export const Header = ({ type }) => {
             <HeaderBanner />
             {/* search section in header */}
             <div className="mt-[100px]">
-              <Search />
+              <HeaderSearch/>
             </div>
           </>
         )}
