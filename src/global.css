@@ -4,6 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar{
+  width: 9px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #013986;
+  border-radius: 10px;
+}
+
+::selection{
+  background-color: #013986;
+  color: white;
+}
+
+img, button {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
 body {
   font-size: 18px;
   line-height: 28px;
