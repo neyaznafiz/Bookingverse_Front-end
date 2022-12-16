@@ -6,7 +6,7 @@ const Navbar = () => {
   // const { pathname } = useLocation();
 
   return (
-    <div className="h-[50px] bg-primary flex justify-center uppercase transition-all duration-300">
+    <div className="h-[50px] bg-primary flex justify-center uppercase transition-all duration-300 sticky top-0">
       <div className="width text-white flex justify-between items-center">
         <div>
           <Link to="/" className="text-2xl uppercase">

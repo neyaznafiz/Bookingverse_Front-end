@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { DateRange } from "react-date-range";
 import { TbMapSearch } from "react-icons/tb";
 import { useLocation } from "react-router-dom";
+import SearchItems from "./SearchItems";
 
 export const HotelsList = () => {
   const location = useLocation();
@@ -20,7 +21,7 @@ export const HotelsList = () => {
 
       <div className="flex justify-center mt-5 tracking-wide">
         <div className="width flex gap-5">
-          <div className="flex-[1] bg-secondary p-4 rounded-lg sticky">
+          <div className="flex-[1] bg-secondary h-max p-4 rounded-lg sticky top-16">
             <h1 className="text-3xl font-semibold text-gray-700">Search</h1>
             {/* destination */}
             <div className="flex flex-col my-3">
@@ -137,7 +138,10 @@ export const HotelsList = () => {
               </button>
             </div>
           </div>
-          <div className="flex-[3] bdr"></div>
+          {/* search items section */}
+          <div className="flex-[3] ">
+            <SearchItems />
+          </div>
         </div>
       </div>
     </div>
