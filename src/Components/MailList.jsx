@@ -1,6 +1,6 @@
 import React from "react";
 
-const MailList = () => {
+export const MailList = () => {
   return (
     <div className="w-full mt-12 bg-primary text-white flex flex-col items-center gap-5 p-12">
       <h1 className="text-5xl">Save Time, Save Money !</h1>
@@ -12,5 +12,3 @@ const MailList = () => {
     </div>
   );
 };
-
-export default MailList;

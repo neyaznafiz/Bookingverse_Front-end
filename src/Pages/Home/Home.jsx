@@ -1,9 +1,8 @@
-import { Footer, Header } from "Components";
+import { Footer, Header, MailList } from "Components";
 import React from "react";
 import Featured from "./Featured";
 import PropertyList from "./PropertyList";
 import FeaturedProperties from "./FeaturedProperties";
-import MailList from "./MailList";
 
 export const Home = () => {
   return (
