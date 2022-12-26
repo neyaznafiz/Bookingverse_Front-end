@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Footer, Header, MailList } from "Components";
 import { HiLocationMarker } from "react-icons/hi";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+import { TbCircleX } from "react-icons/tb";
 
 export const HotelInfo = () => {
+  const [slideNumber, setSlideNumber] = useState(0);
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = (i) => {
+    setSlideNumber(i);
+    setOpen(true);
+  };
+
+  const handleMove = (direction) => {
+    let newSlideNumber;
+
+    if (direction === "left") {
+      newSlideNumber = slideNumber === 0 ? 5 : slideNumber - 1;
+    } else {
+      newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
+    }
+
+    setSlideNumber(newSlideNumber);
+  };
+
   const photos = [
     {
       src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1",
@@ -28,7 +50,37 @@ export const HotelInfo = () => {
     <div>
       <Header type="hotelsList" />
 
-      <div className="flex flex-col items-center mt-5">
+      <div className="flex flex-col items-center relative">
+        {/* //* zoom slider start */}
+        {open && (
+          <div className="sticky top-0 left-0 flex items-center w-screen h-screen bg-black/50 z-[999]">
+            <TbCircleX
+              onClick={() => setOpen(false)}
+              className="absolute top-10 right-10 text-5xl text-white cursor-pointer"
+            />
+
+            <BiLeftArrow
+              onClick={() => handleMove("left")}
+              className="m-10 text-5xl cursor-pointer text-white"
+            />
+
+            <div className="w-full h-full flex justify-center items-center">
+              <img
+                src={photos[slideNumber].src}
+                alt=""
+                className="w-[80%] h-[80vh]"
+              />
+            </div>
+
+            <BiRightArrow
+              onClick={() => handleMove("right")}
+              className="m-10 text-5xl text-white cursor-pointer"
+            />
+          </div>
+        )}
+        {/* // * zoom slider end */}
+
+        {/* //* hotel details section start */}
         <div className="width flex flex-col gap-2 relative">
           <button className="absolute right-0 top-2 bg-[#0071c2] text-white font-semibold tracking-wide py-2 px-5 rounded-md">
             Reserve or Book Now!
@@ -54,6 +106,7 @@ export const HotelInfo = () => {
                 <img
                   src={photo.src}
                   alt=""
+                  onClick={() => handleOpen(i)}
                   className="w-full object-cover rounded-md hover:scale-110 transition-all duration-500"
                 />
               </div>
@@ -90,12 +143,16 @@ export const HotelInfo = () => {
               <h2 className="font-semibold tracking-wide">
                 <b>$945</b> (9 nights)
               </h2>
-              <button className="bg-[#0071c2] text-white font-semibold tracking-wide py-2 px-5 rounded-md">Reserve or Book Now!</button>
+              <button className="bg-[#0071c2] text-white font-semibold tracking-wide py-2 px-5 rounded-md">
+                Reserve or Book Now!
+              </button>
             </div>
           </div>
         </div>
+        {/* //* hotel details section end */}
+
         <MailList />
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
