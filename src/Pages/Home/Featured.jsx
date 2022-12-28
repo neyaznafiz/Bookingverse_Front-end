@@ -9,11 +9,11 @@ import useFetch from "../../Hooks/useFetch";
 
 const Featured = () => {
 
-  const { data, loading, error} = useFetch("http://localhost:5000/api/hotels/count-by-city?cities=Dublin,Las Vegas,Austin,Truckee,Dubai,Italy")
+  const { data, loading, } = useFetch("http://localhost:5000/api/hotels/count-by-city?cities=dublin,las vegas,austin,truckee,dubai,italy")
 
   console.log(data);
   return (
-    <div className="width flex justify-between gap-3 z-[1] text-white">
+    <div className="width grid lg:flex justify-between gap-3 z-[1] text-white">
      {loading ? "Loading Please wait..": <> <div className="flex flex-wrap w-1/2 gap-3">
         <div className="flex gap-3">
           <div className="w-1/2 overflow-hidden cursor-pointer relative rounded-lg">
