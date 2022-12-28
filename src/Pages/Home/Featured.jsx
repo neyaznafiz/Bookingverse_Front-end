@@ -5,11 +5,16 @@ import lasVegas from "../../Assets/Featured/las-vegus.jpg";
 import truckee from "../../Assets/Featured/truckee.jpeg";
 import dubai from "../../Assets/Featured/dubai.jpeg";
 import italy from "../../Assets/Featured/italy.jpg";
+import useFetch from "../../Hooks/useFetch";
 
 const Featured = () => {
+
+  const { data, loading, error} = useFetch("http://localhost:5000/api/hotels/count-by-city?cities=Dublin,Las Vegas,Austin,Truckee,Dubai,Italy")
+
+  console.log(data);
   return (
     <div className="width flex justify-between gap-3 z-[1] text-white">
-      <div className="flex flex-wrap w-1/2 gap-3">
+     {loading ? "Loading Please wait..": <> <div className="flex flex-wrap w-1/2 gap-3">
         <div className="flex gap-3">
           <div className="w-1/2 overflow-hidden cursor-pointer relative rounded-lg">
             <img
@@ -20,7 +25,7 @@ const Featured = () => {
             <div className="absolute bottom-5 left-5">
               <h1 className="text-3xl font-semibold uppercase">Dublin</h1>
               <h2 className="text-xl font-semibold tracking-wide">
-                123 Properties
+                {data[0]} Properties
               </h2>
             </div>
           </div>
@@ -34,7 +39,7 @@ const Featured = () => {
             <div className="absolute bottom-5 left-5">
               <h1 className="text-3xl font-semibold uppercase">Las Vegas</h1>
               <h2 className="text-xl font-semibold tracking-wide">
-                533 Properties
+                {data[1]} Properties
               </h2>
             </div>
           </div>
@@ -50,7 +55,7 @@ const Featured = () => {
             <div className="absolute bottom-5 left-5">
               <h1 className="text-3xl font-semibold uppercase">Austin</h1>
               <h2 className="text-xl font-semibold tracking-wide">
-                532 properties
+                {data[2]} properties
               </h2>
             </div>
           </div>
@@ -68,7 +73,7 @@ const Featured = () => {
             <div className="absolute bottom-5 left-5">
               <h1 className="text-3xl font-semibold uppercase">Truckee</h1>
               <h2 className="text-xl font-semibold tracking-wide">
-                342 properties
+                {data[3]} properties
               </h2>
             </div>
           </div>
@@ -84,7 +89,7 @@ const Featured = () => {
             <div className="absolute bottom-5 left-5">
               <h1 className="text-3xl font-semibold uppercase">Dubai</h1>
               <h2 className="text-xl font-semibold tracking-wide">
-                642 properties
+                {data[4]} properties
               </h2>
             </div>
           </div>
@@ -98,12 +103,12 @@ const Featured = () => {
             <div className="absolute bottom-5 left-5">
               <h1 className="text-3xl font-semibold uppercase">Italy</h1>
               <h2 className="text-xl font-semibold tracking-wide">
-                220 properties
+                {data[5]} properties
               </h2>
             </div>
           </div>
         </div>
-      </div>
+      </div></>}
     </div>
   );
 };
