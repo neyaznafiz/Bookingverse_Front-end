@@ -10,7 +10,7 @@ const HeaderBanner = () => {
               Get rewarded for your travels - unlock instant saving of 10% or
               more with a free Lamabooking account
             </p>
-            <button className="bg-[#025692] px-3 py-2">
+            <button className="bg-light px-3 py-2">
               Sign In / Register
             </button>
         </div>

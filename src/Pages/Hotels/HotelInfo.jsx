@@ -109,7 +109,7 @@ export const HotelInfo = () => {
 
               {/* //* hotel details section start */}
               <div className="width flex flex-col gap-2 relative">
-                <button className="absolute right-0 top-2 bg-[#0071c2] text-white font-semibold tracking-wide py-2 px-5 rounded-md">
+                <button className="absolute right-0 top-2 bg-light text-white font-semibold tracking-wide py-2 px-5 rounded-md">
                   Reserve or Book Now!
                 </button>
 
@@ -173,7 +173,7 @@ export const HotelInfo = () => {
                     <h2 className="font-semibold tracking-wide">
                       <b>${totalPrice}</b> ({days} nights)
                     </h2>
-                    <button className="bg-[#0071c2] text-white font-semibold tracking-wide py-2 px-5 rounded-md">
+                    <button className="bg-light text-white font-semibold tracking-wide py-2 px-5 rounded-md">
                       Reserve or Book Now!
                     </button>
                   </div>

@@ -8,12 +8,12 @@
   width: 9px;
 }
 ::-webkit-scrollbar-thumb{
-  background-color: #013986;
+  background-color: #2d464c;
   border-radius: 10px;
 }
 
 ::selection{
-  background-color: #013986;
+  background-color: #2d464c;
   color: white;
 }
 
