@@ -36,7 +36,7 @@ const PropertyList = () => {
                     <h1 className="text-xl font-semibold tracking-wide capitalize">
                     {data[i]?.type}
                     </h1>
-                    <h2>{data[i]?.count}  </h2>
+                    <h2>{data[i]?.count}</h2>
                   </div>
                 </div>
               </div>
