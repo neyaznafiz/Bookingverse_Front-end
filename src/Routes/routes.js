@@ -1,5 +1,5 @@
 import { Main } from "Layout";
-import { Home, HotelInfo, HotelsList } from "Pages";
+import { Home, HotelInfo, HotelsList, Login } from "Pages";
 import { createBrowserRouter } from "react-router-dom";
 
 export const routes = createBrowserRouter([
@@ -18,6 +18,10 @@ export const routes = createBrowserRouter([
       {
         path: "/hotels/:id",
         element: <HotelInfo />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },

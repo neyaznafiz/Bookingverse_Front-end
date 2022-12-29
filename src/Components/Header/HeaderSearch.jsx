@@ -13,6 +13,7 @@ const HeaderSearch = () => {
   const [destination, setDestination] = useState("");
   // date selection
   const [openDate, setOpenDate] = useState(false);
+  console.log(openDate);
   const [dates, setDates] = useState([
     {
       startDate: new Date(),
