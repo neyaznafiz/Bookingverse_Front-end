@@ -5,6 +5,7 @@ import { DateRange } from "react-date-range";
 import { TbMapSearch } from "react-icons/tb";
 import { useLocation } from "react-router-dom";
 import SearchItems from "./SearchItems";
+import useFetch from "../../../Hooks/useFetch";
 
 export const HotelsList = () => {
   const location = useLocation();
@@ -14,6 +15,17 @@ export const HotelsList = () => {
   const [openDate, setOpenDate] = useState(false);
 
   const [options, setOptions] = useState(location.state.options);
+
+  const [minPrice, setMinPrice] = useState(undefined);
+  const [maxPrice, setMaxPrice] = useState(undefined);
+
+  const { data, loading, reFetch } = useFetch(
+    `http://localhost:5000/api/hotels?city=${destination}&min=${minPrice || 0}&max=${maxPrice || 1000}`
+  );
+
+  const handleSearch = () => {
+    reFetch()
+   }
 
   return (
     <div>
@@ -75,6 +87,7 @@ export const HotelsList = () => {
                   type="number"
                   name="minPrice"
                   id="minPrice"
+                  onChange={e=>setMinPrice(e.target.value)}
                   className="w-24 h-9 rounded-md"
                 />
               </div>
@@ -88,6 +101,7 @@ export const HotelsList = () => {
                   type="number"
                   name="maxPrice"
                   id="maxPrice"
+                  onChange={e=>setMaxPrice(e.target.value)}
                   className="w-24 h-9 rounded-md"
                 />
               </div>
@@ -133,14 +147,25 @@ export const HotelsList = () => {
             </div>
 
             <div className="mt-6">
-              <button className="h-9 w-full flex justify-center items-center gap-x-2 bg-white text-primary font-semibold tracking-wide rounded-md">
+              <button onClick={handleSearch} className="h-9 w-full flex justify-center items-center gap-x-2 bg-white text-primary font-semibold tracking-wide rounded-md">
                 Search <TbMapSearch className="text-xl" />
               </button>
             </div>
           </div>
           {/* search items section */}
           <div className="flex-[3] ">
-            <SearchItems />
+            {loading ? (
+              "Loading..."
+            ) : (
+              <>
+                {data.map((item) => (
+                  <SearchItems
+                    key={item._id}
+                    searchResult={item}
+                  />
+                ))}
+              </>
+            )}
           </div>
         </div>
       </div>
