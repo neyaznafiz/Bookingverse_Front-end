@@ -2,6 +2,7 @@ import { async } from "@firebase/util";
 import { AuthContext } from "../../Context/AuthContext";
 import React, { useContext, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -10,6 +11,7 @@ export const Login = () => {
   });
 
   const { loading, error, dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -28,6 +30,7 @@ export const Login = () => {
       console.log(res);
 
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+      navigate('/')
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
     }

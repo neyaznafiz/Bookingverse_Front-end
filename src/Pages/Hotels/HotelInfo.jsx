@@ -4,23 +4,29 @@ import { HiLocationMarker } from "react-icons/hi";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { TbCircleX } from "react-icons/tb";
 import useFetch from "../../Hooks/useFetch";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../Context/SearchContext";
+import { AuthContext } from "../../Context/AuthContext";
+import ReserveModal from "./ReserveModal";
 
 export const HotelInfo = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
+
+  const [openBookModal, setOpenBookModal] = useState(false);
 
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const { data, loading } = useFetch(`http://localhost:5000/api/hotels/${id}`);
 
   const { dates, options } = useContext(SearchContext);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   // date to day converter function
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
   const dayDifference = (dae1, date2) => {
-    const timeDiff = Math.abs(date2.getTime() - dae1.getTime());
+    const timeDiff = Math.abs(date2?.getTime() - dae1?.getTime());
     const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
     return diffDays;
   };
@@ -32,6 +38,15 @@ export const HotelInfo = () => {
   const handleOpen = (i) => {
     setSlideNumber(i);
     setOpen(true);
+  };
+
+  // for booking
+  const handleBook = () => {
+    if (user) {
+      setOpenBookModal(true);
+    } else {
+      navigate("/login");
+    }
   };
 
   const handleMove = (direction) => {
@@ -173,7 +188,10 @@ export const HotelInfo = () => {
                     <h2 className="font-semibold tracking-wide">
                       <b>${totalPrice}</b> ({days} nights)
                     </h2>
-                    <button className="bg-light text-white font-semibold tracking-wide py-2 px-5 rounded-md">
+                    <button
+                      onClick={handleBook}
+                      className="bg-light text-white font-semibold tracking-wide py-2 px-5 rounded-md"
+                    >
                       Reserve or Book Now!
                     </button>
                   </div>
@@ -186,6 +204,7 @@ export const HotelInfo = () => {
         <MailList />
         <Footer />
       </div>
+      {openBookModal && <ReserveModal setOpenBookModal={setOpenBookModal} hotelId={id} />}
     </div>
   );
 };
