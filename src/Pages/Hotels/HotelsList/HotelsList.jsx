@@ -11,7 +11,7 @@ export const HotelsList = () => {
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
 
-  const [date, setDate] = useState(location.state.date);
+  const [dates, setDates] = useState(location.state.dates);
   const [openDate, setOpenDate] = useState(false);
 
   const [options, setOptions] = useState(location.state.options);
@@ -55,16 +55,16 @@ export const HotelsList = () => {
                 id="check-in-date"
                 className="bg-white h-9 px-2 rounded-md flex items-center cursor-pointer"
               >
-                {`${format(date[0].startDate, "MM/dd/yyyy")} To ${format(
-                  date[0].endDate,
+                {`${format(dates[0].startDate, "MM/dd/yyyy")} To ${format(
+                  dates[0].endDate,
                   "MM/dd/yyyy"
                 )}`}
               </p>
               {openDate && (
                 <DateRange
-                  onChange={(item) => setDate([item.selection])}
+                  onChange={(item) => setDates([item.selection])}
                   minDate={new Date()}
-                  ranges={date}
+                  ranges={dates}
                   className="rounded-md mt-1"
                 />
               )}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import "react-date-range/dist/styles.css";
@@ -7,12 +7,13 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { TbMapSearch } from "react-icons/tb";
 import { FaBed, FaCalendarAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../../Context/SearchContext";
 
 const HeaderSearch = () => {
   const [destination, setDestination] = useState("");
   // date selection
   const [openDate, setOpenDate] = useState(false);
-  const [date, setDate] = useState([
+  const [dates, setDates] = useState([
     {
       startDate: new Date(),
       endDate: new Date(),
@@ -38,10 +39,13 @@ const HeaderSearch = () => {
     });
   };
 
+  const {dispatch} = useContext(SearchContext)
+
   // handle search
   const navigate = useNavigate();
   const handleSearch = () => {
-    navigate("/hotels", { state: { destination, date, options } });
+    dispatch({type:"NEW_SEARCH", payload: {destination, dates, options}});
+    navigate("/hotels", { state: { destination, dates, options } });
   };
 
   return (
@@ -63,16 +67,16 @@ const HeaderSearch = () => {
       >
         <FaCalendarAlt className="text-2xl" />
         <p className="-mb-[7px]">{`${format(
-          date[0].startDate,
+          dates[0].startDate,
           "MM/dd/yyyy"
-        )} To ${format(date[0].endDate, "MM/dd/yyyy")}`}</p>
+        )} To ${format(dates[0].endDate, "MM/dd/yyyy")}`}</p>
         {openDate && (
           <DateRange
             editableDateInputs={true}
-            onChange={(item) => setDate([item.selection])}
+            onChange={(item) => setDates([item.selection])}
             minDate={new Date()}
             moveRangeOnFirstSelection={false}
-            ranges={date}
+            ranges={dates}
             className="absolute top-14 z-[999] shadow-md rounded-md"
           />
         )}

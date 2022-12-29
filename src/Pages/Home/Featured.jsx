@@ -11,7 +11,6 @@ const Featured = () => {
 
   const { data, loading, } = useFetch("http://localhost:5000/api/hotels/count-by-city?cities=dublin,las vegas,austin,truckee,dubai,italy")
 
-  console.log(data);
   return (
     <div className="width grid lg:flex justify-between gap-3 z-[1] text-white">
      {loading ? "Loading Please wait..": <> <div className="flex flex-wrap w-1/2 gap-3">

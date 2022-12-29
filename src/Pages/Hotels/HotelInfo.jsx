@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Footer, Header, MailList } from "Components";
 import { HiLocationMarker } from "react-icons/hi";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { TbCircleX } from "react-icons/tb";
 import useFetch from "../../Hooks/useFetch";
 import { useLocation } from "react-router-dom";
+import { SearchContext } from "../../Context/SearchContext";
 
 export const HotelInfo = () => {
   const [slideNumber, setSlideNumber] = useState(0);
@@ -13,6 +14,20 @@ export const HotelInfo = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const { data, loading } = useFetch(`http://localhost:5000/api/hotels/${id}`);
+
+  const { dates, options } = useContext(SearchContext);
+
+  // date to day converter function
+  const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
+  const dayDifference = (dae1, date2) => {
+    const timeDiff = Math.abs(date2.getTime() - dae1.getTime());
+    const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
+    return diffDays;
+  };
+  const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate);
+
+  // total price
+  const totalPrice = days * data.cheapestPrice * options.room;
 
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -147,16 +162,16 @@ export const HotelInfo = () => {
                     service. */}
                     </p>
                   </div>
-                  <div className="flex-[1] bg-[#ebf3ff] flex flex-col gap-5 p-4 ">
-                    <h1 className="text-[22px] font-bold tracking-wider text-gray-600">
-                      Perfect for a 9-night stay!
+                  <div className="flex-[1.5] bg-[#ebf3ff] flex flex-col gap-5 p-4 ">
+                    <h1 className="text-[20px] font-bold tracking-wider text-gray-600">
+                      Perfect for a {days}-night stay!
                     </h1>
                     <span className="text-[16px] tracking-wide">
                       Located in the real heart of Krakow, this property has an
                       excellent location score of 9.8!
                     </span>
                     <h2 className="font-semibold tracking-wide">
-                      <b>$945</b> (9 nights)
+                      <b>${totalPrice}</b> ({days} nights)
                     </h2>
                     <button className="bg-[#0071c2] text-white font-semibold tracking-wide py-2 px-5 rounded-md">
                       Reserve or Book Now!
