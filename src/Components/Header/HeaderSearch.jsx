@@ -13,7 +13,6 @@ const HeaderSearch = () => {
   const [destination, setDestination] = useState("");
   // date selection
   const [openDate, setOpenDate] = useState(false);
-  console.log(openDate);
   const [dates, setDates] = useState([
     {
       startDate: new Date(),
@@ -63,23 +62,25 @@ const HeaderSearch = () => {
 
       {/* date */}
       <div
-        onClick={() => setOpenDate(!openDate)}
+       
         className="flex items-center gap-x-3 cursor-pointer"
       >
         <FaCalendarAlt className="text-2xl" />
-        <p className="-mb-[7px]">{`${format(
+        <p  onClick={() => setOpenDate(!openDate)} className="-mb-[7px]">{`${format(
           dates[0].startDate,
           "MM/dd/yyyy"
         )} To ${format(dates[0].endDate, "MM/dd/yyyy")}`}</p>
         {openDate && (
-          <DateRange
+          <div className="absolute top-14 z-[999] shadow-md rounded-md">
+             <DateRange
             editableDateInputs={true}
             onChange={(item) => setDates([item.selection])}
             minDate={new Date()}
             moveRangeOnFirstSelection={false}
             ranges={dates}
-            className="absolute top-14 z-[999] shadow-md rounded-md"
+            
           />
+         </div>
         )}
       </div>
 
