@@ -1,3 +1,4 @@
+import axios from "axios";
 import { SearchContext } from "../../Context/SearchContext";
 import useFetch from "../../Hooks/useFetch";
 import React, { useContext, useState } from "react";
@@ -45,7 +46,20 @@ const ReserveModal = ({ setOpenBookModal, hotelId }) => {
     );
   };
 
-  const handleReserve = () => {};
+  const handleReserve = async () => {
+    try {
+      await Promise.all(
+        selectedRooms.map((roomId) => {
+          const res = axios.put(
+            `http://localhost:5000/api/rooms/availability/${roomId}`,
+            { dates: allDates }
+          );
+          return res.data;
+        })
+      );
+      setOpenBookModal(false)
+    } catch (err) {}
+  };
 
   return (
     <div className="w-full h-full bg-black/50 fixed top-0 left-0 flex items-center justify-center">
@@ -55,9 +69,14 @@ const ReserveModal = ({ setOpenBookModal, hotelId }) => {
           className="text-5xl text-red-800 cursor-pointer absolute right-1 top-1"
         />
 
-        <span className="text-2xl font-semibold text-light">Select your rooms </span>
+        <span className="text-2xl font-semibold text-light">
+          Select your rooms{" "}
+        </span>
         {data.map((item) => (
-          <div key={item._id} className=" flex justify-between items-center gap-12 p-5 ">
+          <div
+            key={item._id}
+            className=" flex justify-between items-center gap-12 p-5 "
+          >
             <div className="flex flex-col gap-2">
               <div className="font-bold">{item.title}</div>
               <div>{item.desc}</div>
@@ -86,7 +105,12 @@ const ReserveModal = ({ setOpenBookModal, hotelId }) => {
           </div>
         ))}
 
-        <button onClick={handleReserve} className="bg-light text-white font-semibold cursor-pointer w-full rounded-md mt-5 py-3 tracking-wider">Reserve Now</button>
+        <button
+          onClick={handleReserve}
+          className="bg-light text-white font-semibold cursor-pointer w-full rounded-md mt-5 py-3 tracking-wider"
+        >
+          Reserve Now
+        </button>
       </div>
     </div>
   );
